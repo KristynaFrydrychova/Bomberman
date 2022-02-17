@@ -1,0 +1,34 @@
+#include "mesh.h"
+
+mesh my_mesh;
+
+void do_draw()
+{
+  ...
+  
+  mesh_draw_...(my_mesh);
+  
+  ...
+}
+
+main()
+{
+  ...
+  
+	if (!loadOBJ(my_mesh, "model.obj"))
+	{
+		std::cerr << "loadOBJ failed" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+	std::cout << "Mesh: initialized, vertices: " << my_mesh.vertices.size() << ", indices: " << my_mesh.indices.size() << std::endl;
+  
+  ...
+  
+  while (1)
+  {
+    ...
+    do_draw()
+    ...
+  }
+  ...
+}
